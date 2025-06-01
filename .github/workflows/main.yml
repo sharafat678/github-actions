@@ -1,24 +1,14 @@
 name: CI Pipeline
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  schedule:
+    - cron: "0 0 * * *"
 
 jobs:
-  build:
+  Print:
     runs-on: ubuntu-latest
 
     steps:
       # Step 3: Install dependencies
       - name: Install dependencies
         run: echo "hello"
-
-      # Step 4: Run tests
-      - name: Run tests
-        run: npm test
-
-      # Step 5: Build project
-      - name: Build project
-        run: npm run build
