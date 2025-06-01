@@ -1,14 +1,14 @@
-name: CI Pipeline
+name: Run Every Minute
 
 on:
   schedule:
-    - cron: "* * * * *"
+    - cron: "* * * * *"   # Every minute
+  workflow_dispatch:        # Optional: allows manual trigger
 
 jobs:
-  Print:
+  print:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 3: Install dependencies
-      - name: Install dependencies
+      - name: Say Hello
         run: echo "hello"
